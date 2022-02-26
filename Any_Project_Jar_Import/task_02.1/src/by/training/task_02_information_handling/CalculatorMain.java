@@ -6,7 +6,10 @@ import by.training.task_02_information_handling.output.OutputConsole;
 public class CalculatorMain {
 
   public static void main(String[] args) {
-    OutputConsole.printResultingMsg(new CalculatorSuper().getResult());
+    double dataFromConsole = new CalculatorSuper().getResult(null);
+    OutputConsole.printResultingMsg(dataFromConsole);
+    double dataFromMethodArgument = new CalculatorSuper().getResult("1+10-((3-2)+15)/2");
+    OutputConsole.printResultingMsg(dataFromMethodArgument);
   }
 
 }
