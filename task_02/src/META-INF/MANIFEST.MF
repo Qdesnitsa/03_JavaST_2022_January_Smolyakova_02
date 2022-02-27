@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: by.training.task_02_information_handling.runner.CalculatorMa
- in
-
