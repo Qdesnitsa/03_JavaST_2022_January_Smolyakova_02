@@ -3,10 +3,10 @@ package by.training.task_02_information_handling.input;
 import by.training.task_02_information_handling.output.OutputConsole;
 import java.util.Scanner;
 
-public final class InputScanner {
+public final class InputData {
   private static String input;
 
-  private InputScanner() {
+  private InputData() {
   }
 
   /**

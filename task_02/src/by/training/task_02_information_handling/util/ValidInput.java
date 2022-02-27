@@ -2,7 +2,7 @@ package by.training.task_02_information_handling.util;
 
 import static by.training.task_02_information_handling.util.PatternRegex.*;
 
-import by.training.task_02_information_handling.input.InputScanner;
+import by.training.task_02_information_handling.input.InputData;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,16 +18,16 @@ public final class ValidInput {
    * @return строку соответствующую условию
    */
   public static String obtainValidElements() {
-    input = InputScanner.obtainInput();
+    input = InputData.obtainInput();
 
-    for( ;!input.matches(INVALID_INPUT); input = InputScanner.obtainInput()) {
+    for( ;!input.matches(INVALID_INPUT); input = InputData.obtainInput()) {
     }
 
     return input;
   }
 
   public static String obtainValidElements(String input) {
-    input = InputScanner.obtainInput(input);
+    input = InputData.obtainInput(input);
     if (!input.matches(INVALID_INPUT)) {
       throw new RuntimeException("Argument contains characters other than numbers and '(',')','+','-','*','/'.");
     }
