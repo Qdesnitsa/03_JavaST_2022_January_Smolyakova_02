@@ -5,15 +5,14 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public final class PatternRegex {
-  static final String INVALID_INPUT = "[0-9\\/\\*\\+\\-\\(\\)]+";
-  static final String INVALID_ORDER_OPERATORS = "[\\+|\\-|\\*|\\/]{2,}";
-  static final String INVALID_ORDER_WITH_BRACKETS = "[\\(][\\)|\\+|\\-|\\*|\\/]|[\\)][\\(]|[\\d]]|[0-9][\\(]|[\\(][\\d+][\\)]|[\\+|\\-|\\*|\\/][\\)]";
-  static final String INVALID_START_LINE = "^[\\+|\\-|\\*|\\/\\)]";
-  static final String INVALID_END_LINE = "[\\+|\\-|\\*|\\/\\(]$";
-  static final Pattern PATTERN_1;
-  static final Pattern PATTERN_2;
-  static final Pattern PATTERN_3;
-  static final Pattern PATTERN_4;
+  private static final String INVALID_ORDER_OPERATORS = "[\\+|\\-|\\*|\\/]{2,}";
+  private static final String INVALID_ORDER_WITH_BRACKETS = "[\\(][\\)|\\+|\\-|\\*|\\/]|[\\)][\\(]|[\\d]]|[0-9][\\(]|[\\(][\\d+][\\)]|[\\+|\\-|\\*|\\/][\\)]";
+  private static final String INVALID_START_LINE = "^[\\+|\\-|\\*|\\/\\)]";
+  private static final String INVALID_END_LINE = "[\\+|\\-|\\*|\\/\\(]$";
+  private static final Pattern PATTERN_1;
+  private static final Pattern PATTERN_2;
+  private static final Pattern PATTERN_3;
+  private static final Pattern PATTERN_4;
 
   static {
     PATTERN_1 = Pattern.compile(PatternRegex.INVALID_ORDER_OPERATORS);

@@ -8,6 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class ValidInput {
+  private static final String INVALID_INPUT = "[0-9\\/\\*\\+\\-\\(\\)]+";
   private static String input;
 
   private ValidInput() {
