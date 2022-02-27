@@ -16,7 +16,7 @@ public final class OutputConsole {
    * Метод выводит результат вычислений.
    * @param result результат вычисления.
    */
-  public static void printResultingMsg(double result) {
-    System.out.println("Answer = " + result);
+  public static void printResultingMsg(String  result) {
+    System.out.println(result);
   }
 }

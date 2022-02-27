@@ -33,6 +33,7 @@ public final class ValidInput {
    * иначе выбрасывает исключение "Argument contains characters other than numbers and '(',')','+','-','*','/'.").
    */
   public static String obtainValidElements(String input) {
+
     if (!input.matches(INVALID_INPUT)) {
       throw new RuntimeException("Argument contains characters other than numbers and '(',')','+','-','*','/'.");
     }

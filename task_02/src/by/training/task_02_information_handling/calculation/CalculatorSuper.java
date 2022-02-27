@@ -1,22 +1,25 @@
 package by.training.task_02_information_handling.calculation;
 
+import by.training.task_02_information_handling.api.ICalculator;
+import by.training.task_02_information_handling.util.Calculator;
 import by.training.task_02_information_handling.util.Parser;
 import by.training.task_02_information_handling.util.Priority;
 import java.util.List;
 import java.util.Stack;
 
-public class CalculatorSuper extends CalculatorSimple{
+public class CalculatorSuper implements ICalculator {
   private final Stack<Double> numbers = new Stack();
   private final Stack<String> operators = new Stack();
+  private String input;
+  Parser parser = new Parser();
 
-  public double getResult(String input) {
+  public void calcResult(Calculator calc) {
     List<String> array;
-    if (input != null)
-    {
-      array = Parser.parserSixElements(input);
-    } else {
-      array = Parser.parserSixElements();
-    }
+    if (calc.getTypeOfInput() == 1) {
+      input = calc.getExpression();
+      array = parser.parserSixElements(input);
+    } else
+      array = parser.parserSixElements(calc);
 
     for(int i = 0; i < array.size(); ++i) {
       String element = array.get(i);
@@ -47,7 +50,7 @@ public class CalculatorSuper extends CalculatorSimple{
     while(!operators.empty()) {
       calculate();
     }
-    return numbers.pop();
+    calc.setResult(numbers.pop());
   }
 
   public void calculate() {

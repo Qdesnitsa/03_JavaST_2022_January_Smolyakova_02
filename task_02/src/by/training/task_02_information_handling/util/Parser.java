@@ -14,15 +14,13 @@ public final class Parser {
     pattern = Pattern.compile(delimiter);
   }
 
-  private Parser() {
-  }
-
   /**
    * Метод делит строку, переданную с консоли, на объекты String при наличии любого из разделителей (delimeter).
    * @return коллекцию Arraylist со всеми элементами.
    */
-  public static List<String> parserSixElements() {
+  public List<String> parserSixElements(Calculator calc) {
     input = ValidInput.equalCountBrackets();
+    calc.setExpression(input);
     Matcher matcher = pattern.matcher(input);
     List<String> array = new ArrayList();
 
@@ -38,7 +36,7 @@ public final class Parser {
    * @param input строка для обработки.
    * @return коллекцию Arraylist со всеми элементами.
    */
-  public static List<String> parserSixElements(String input) {
+  public List<String> parserSixElements(String input) {
     input = ValidInput.equalCountBrackets(input);
     Matcher matcher = pattern.matcher(input);
     List<String> array = new ArrayList();
