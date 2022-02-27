@@ -2,7 +2,7 @@ package by.training.task_02_information_handling.util;
 
 import static by.training.task_02_information_handling.util.PatternRegex.*;
 
-import by.training.task_02_information_handling.input.InputData;
+import by.training.task_02_information_handling.input.InputScanner;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,20 +14,25 @@ public final class ValidInput {
   }
 
   /**
-   * Метод проверяет строку на соответствие целым числам и символам '(',')','+','-','*','/'
-   * @return строку соответствующую условию
+   * Метод проверяет строку на соответствие целым числам и символам '(',')','+','-','*','/'.
+   * @return строку соответствующую условию.
    */
   public static String obtainValidElements() {
-    input = InputData.obtainInput();
+    input = InputScanner.obtainInput();
 
-    for( ;!input.matches(INVALID_INPUT); input = InputData.obtainInput()) {
+    for( ;!input.matches(INVALID_INPUT); input = InputScanner.obtainInput()) {
     }
 
     return input;
   }
 
+  /**
+   * Метод проверяет строку на соответствие целым числам и символам '(',')','+','-','*','/'.
+   * @param input строка для проверки.
+   * @return строку соответствующую условию
+   * иначе выбрасывает исключение "Argument contains characters other than numbers and '(',')','+','-','*','/'.").
+   */
   public static String obtainValidElements(String input) {
-    input = InputData.obtainInput(input);
     if (!input.matches(INVALID_INPUT)) {
       throw new RuntimeException("Argument contains characters other than numbers and '(',')','+','-','*','/'.");
     }
@@ -35,8 +40,8 @@ public final class ValidInput {
   }
 
   /**
-   * Метод проверяет строку на соответствие последовательности цифр и символов для расчёта выражения
-   * @return строку соответствующую условию
+   * Метод проверяет строку на соответствие последовательности цифр и символов для расчёта выражения.
+   * @return строку, если она соответствует условию.
    */
   public static String obtainValidOrder() {
     input = obtainValidElements();
@@ -54,6 +59,11 @@ public final class ValidInput {
     return input;
   }
 
+  /**
+   * Метод проверяет строку на соответствие последовательности цифр и символов для расчёта выражения.
+   * @param input строка для проверки.
+   * @return строку, если она соответствует условию иначе выбрасывает исключение "Invalid consistency of characters."
+   */
   public static String obtainValidOrder(String input) {
     input = obtainValidElements(input);
     List<Pattern> patterns = obtainArrayListPattern();
@@ -69,9 +79,9 @@ public final class ValidInput {
   }
 
   /**
-   * Метод считает количество передаваемого элемента в строке
+   * Метод считает количество передаваемого элемента в строке.
    * @param targetElement целевой элемент для подсчета
-   * @param input строка
+   * @param input строка, в которой необходимо провести подсчет.
    * @return количество повторений
    */
   public static int countBrackets(char targetElement, String input) {
@@ -87,8 +97,8 @@ public final class ValidInput {
   }
 
   /**
-   * Метод проверяет на равенство количество повторений символов '(' и ')'
-   * @return строку, если она соответствует условию
+   * Метод проверяет на равенство количество повторений символов '(' и ')'.
+   * @return строку, если она соответствует условию.
    */
   public static String equalCountBrackets() {
     input = obtainValidOrder();
@@ -103,6 +113,11 @@ public final class ValidInput {
     return input;
   }
 
+  /**
+   * Метод проверяет на равенство количество повторений символов '(' и ')'.
+   * @param input строка для проверки.
+   * @return строку, если она соответствует условию иначе выбрасывает исключение "Unequal number of '(' and ')'."
+   */
   public static String equalCountBrackets(String input) {
     input = obtainValidOrder(input);
     int count1 = countBrackets('(', input);

@@ -3,10 +3,10 @@ package by.training.task_02_information_handling.input;
 import by.training.task_02_information_handling.output.OutputConsole;
 import java.util.Scanner;
 
-public final class InputData {
+public final class InputScanner {
   private static String input;
 
-  private InputData() {
+  private InputScanner() {
   }
 
   /**
@@ -20,12 +20,4 @@ public final class InputData {
     return input;
   }
 
-  /**
-   * Метод принимает принимает и возвращает переданную строку.
-   * @param input
-   * @return
-   */
-  public static String obtainInput(String input) {
-    return input;
-  }
 }
