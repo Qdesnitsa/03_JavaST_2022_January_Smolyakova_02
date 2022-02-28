@@ -1,7 +1,6 @@
-package by.training.task_02_information_handling.runner;
+package by.training.task_02_information_handling.main;
 
-import by.training.task_02_information_handling.calculation.CalculatorSuper;
-import by.training.task_02_information_handling.util.Calculator;
+import by.training.task_02_information_handling.bin.Calculator;
 import by.training.task_02_information_handling.output.OutputConsole;
 
 public class CalculatorMain {

@@ -1,7 +1,7 @@
 package by.training.task_02_information_handling.calculation;
 
 import by.training.task_02_information_handling.api.ICalculator;
-import by.training.task_02_information_handling.util.Calculator;
+import by.training.task_02_information_handling.bin.Calculator;
 import by.training.task_02_information_handling.util.Parser;
 import by.training.task_02_information_handling.util.Priority;
 import java.util.List;
@@ -11,7 +11,7 @@ public class CalculatorSuper implements ICalculator {
   private final Stack<Double> numbers = new Stack();
   private final Stack<String> operators = new Stack();
   private String input;
-  Parser parser = new Parser();
+  private Parser parser = new Parser();
 
   public void calcResult(Calculator calc) {
     List<String> array;

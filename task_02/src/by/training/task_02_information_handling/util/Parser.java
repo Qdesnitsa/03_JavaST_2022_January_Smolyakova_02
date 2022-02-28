@@ -1,5 +1,6 @@
 package by.training.task_02_information_handling.util;
 
+import by.training.task_02_information_handling.bin.Calculator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -8,13 +9,9 @@ import java.util.regex.Pattern;
 public final class Parser {
   private static String input;
   private final static String delimiter = "\\d+|\\+|\\-|\\*|\\/|\\(|\\)";
-  private final static Pattern pattern;
+  private final static Pattern pattern = Pattern.compile(delimiter);
 
-  static {
-    pattern = Pattern.compile(delimiter);
-  }
-
-  /**
+   /**
    * Метод делит строку, переданную с консоли, на объекты String при наличии любого из разделителей (delimeter).
    * @return коллекцию Arraylist со всеми элементами.
    */

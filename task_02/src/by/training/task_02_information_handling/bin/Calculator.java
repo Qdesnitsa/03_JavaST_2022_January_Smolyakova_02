@@ -1,6 +1,7 @@
-package by.training.task_02_information_handling.util;
+package by.training.task_02_information_handling.bin;
 
 import by.training.task_02_information_handling.calculation.CalculatorSuper;
+import java.util.Objects;
 
 public class Calculator {
   private String expression;
@@ -37,13 +38,27 @@ public class Calculator {
     return typeOfInput;
   }
 
-  public void setTypeOfInput(int typeOfInput) {
-    this.typeOfInput = typeOfInput;
-  }
-
   @Override
   public String toString() {
     return expression +
         " = " + result;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Calculator that = (Calculator) o;
+    return Double.compare(that.result, result) == 0 && typeOfInput == that.typeOfInput
+        && Objects.equals(expression, that.expression);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(expression, result, typeOfInput);
   }
 }
