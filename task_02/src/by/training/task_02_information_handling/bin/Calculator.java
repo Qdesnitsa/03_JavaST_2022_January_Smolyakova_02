@@ -7,6 +7,7 @@ public class Calculator {
   private String expression;
   private double result;
   private int typeOfInput;
+  private final CalculatorSuper CALC_SUPER = new CalculatorSuper();
 
   public Calculator() {
     this.typeOfInput = 0;
@@ -26,7 +27,7 @@ public class Calculator {
   }
 
   public double getResult() {
-    new CalculatorSuper().calcResult(this);
+    CALC_SUPER.calcResult(this);
     return result;
   }
 
