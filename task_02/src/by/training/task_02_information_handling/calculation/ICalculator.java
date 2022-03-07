@@ -1,4 +1,4 @@
-package by.training.task_02_information_handling.api;
+package by.training.task_02_information_handling.calculation;
 
 public interface ICalculator {
   default double sum(double a, double b) {

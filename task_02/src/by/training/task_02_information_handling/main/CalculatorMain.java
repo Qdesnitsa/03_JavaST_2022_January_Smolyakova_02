@@ -1,6 +1,6 @@
 package by.training.task_02_information_handling.main;
 
-import by.training.task_02_information_handling.bin.Calculator;
+import by.training.task_02_information_handling.bean.Calculator;
 import by.training.task_02_information_handling.output.OutputConsole;
 
 public class CalculatorMain {

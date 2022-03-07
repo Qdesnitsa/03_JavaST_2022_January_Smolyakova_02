@@ -1,6 +1,6 @@
 package by.training.task_02_information_handling.util;
 
-import by.training.task_02_information_handling.bin.Calculator;
+import by.training.task_02_information_handling.bean.Calculator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;

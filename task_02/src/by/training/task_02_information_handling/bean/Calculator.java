@@ -1,4 +1,4 @@
-package by.training.task_02_information_handling.bin;
+package by.training.task_02_information_handling.bean;
 
 import by.training.task_02_information_handling.calculation.CalculatorSuper;
 import java.util.Objects;
